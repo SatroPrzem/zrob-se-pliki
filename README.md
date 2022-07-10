@@ -1,5 +1,6 @@
 # zrob-se-pliki
 
+```
 TYPE IN TERMINAL: 
 e.g. 
 node zrob-se-pliki.js page000.js 17 . ../matematyka/page000.js
@@ -24,3 +25,4 @@ Content of the file CAN be copy from another
 You can also type path where you want to create new file/s
 
 ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! ENYOJ! 
+```
