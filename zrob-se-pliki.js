@@ -3,7 +3,7 @@ const { existsSync } = require("fs");
 const firstNewFileName = process.argv[2];
 const howMany = process.argv[3] ? process.argv[3] : 1;
 let dirPath = process.argv[4] ? process.argv[4] : "./";
-let content = process.argv[5] ? process.argv[5] : "";
+let content = process.argv[5] ? process.argv[5] : firstNewFileName;
 
 (async () => {
   if (
