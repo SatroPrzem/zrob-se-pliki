@@ -1,4 +1,4 @@
-const fs = require("fs").promises;
+const {readFile, mkdir, writeFile} = require("fs").promises;
 const { existsSync } = require("fs");
 const firstNewFileName = process.argv[2];
 const howMany = process.argv[3] ? process.argv[3] : 1;
@@ -12,18 +12,18 @@ let content = process.argv[5] ? process.argv[5] : "";
     (content !== "" && !existsSync(content))
   ) {
     console.error(
-      "YOU DID SOMETHING WRONG \nBEFORE USEING THIS FILE READ README.MD FILE"
+      "YOU DID SOMETHING WRONG \nBEFORE USING THIS FILE READ README.MD FILE"
     );
     return;
   }
 
   if (content) {
-    content = await fs.readFile(content, "utf-8");
+    content = await readFile(content, "utf-8");
   }
 
   dirPath = dirPath[dirPath.length - 1] === "/" ? dirPath : dirPath + "/";
   if (dirPath !== "./" && !existsSync(dirPath)) {
-    await fs.mkdir(dirPath, { recursive: true });
+    await mkdir(dirPath, { recursive: true });
   }
 
   let baseName = firstNewFileName.slice(0, firstNewFileName.lastIndexOf("."));
@@ -37,7 +37,7 @@ let content = process.argv[5] ? process.argv[5] : "";
     const createdFile = `${dirPath}${baseName}${lastNumber}${extension}`;
     console.log("createdFile: ", createdFile);
     try {
-      await fs.writeFile(createdFile, content, "utf8");
+      await writeFile(createdFile, content, "utf8");
       if (
         (baseName[baseName.length - 1] == 0 && lastNumber === "") ||
         (baseName[baseName.length - 1] == 0 &&
